@@ -25,6 +25,32 @@
             width: 60px;
             height: 70px;
         }
+        
+        .button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 16px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        
+        .button3 {
+            background-color: white;
+            color: black;
+            border: 2px solid #555555;
+        }
+        
+        .button3:hover {
+            background-color: #555555;
+            color: white;
+        }
     </style>
 </head>
 
@@ -40,7 +66,8 @@
                     <li><a href="contactus.html">Contact Us</a></li>
                     <li><a href="LogIn.html">Login</a></li>
                     <li><a href="CreateAccount.html">Signup</a></li>
-                    <a href="profile.html"><i class="fas fa-user-circle" style='font-size:25px;color:rgb(255, 251, 251)' title="Profile"></i></a>
+                    <li><i class="fa fa-bell" style="font-size:25px"></i></li>
+                    <a href="profile.html"><i class="fas fa-user-circle" style='font-size:25px;color:rgb(255, 251, 251)'></i></a>
                 </ul>
             </div>
         </nav>
@@ -60,8 +87,7 @@
                     <div class="phone details">
                         <i class="fas fa-phone-alt"></i>
                         <div class="topic">Phone</div>
-                        <div class="text-one">+91 99999 99999</div>
-                        <div class="text-two">+91 88888 88888</div>
+                        <div class="text-one">9999999999</div>
                     </div>
                     <div class="email details">
                         <i class="fas fa-envelope"></i>
@@ -69,102 +95,68 @@
                         <div class="text-one">abc@xyz.com</div>
                         <!-- <div class="text-two">bt20cse138@iiitn.ac.in</div> -->
                     </div>
+                    <div>
+                        <button class="button button3">Edit Profile</button>
+                    </div>
                 </div>
                 <div class="right-side">
-
-
-                    <table class="user-details">
-                        <tr>
-                            <th class="topic-text">
-                                <div class="user">
-                                    <td><i class="fas fa-user-alt fa-5x" style="color:#3e2093"></i></td>
-                                </div>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>UserName</th>
-                            <td>abcssssxyz</td>
-                        </tr>
-
-
-                        <tr>
-                            <th>UserId</th>
-                            <td>125</td>
-                        </tr>
-                        <tr>
-                            <th>Email Id</th>
-                            <td>abc@xyz.com</td>
-                        </tr>
-                        <tr>
-                            <th>Gender</th>
-                            <td>Male</td>
-                        </tr>
-                        <tr>
-                            <th>Date of Birth</th>
-                            <td>10/10/2003</td>
-                        </tr>
-                        <tr>
-                            <th>Contact No.</th>
-                            <td>9999999999</td><br>
-                        </tr>
-
-                    </table>
                     <div class="topic-text"><u> Recent Activity</u></div>
-                    <table class="activity">
+                    <div>&nbsp;</div>
+                    <div>
+                        <table class="activity">
 
-                        <tbody>
-                            <tr>
-                                <td class="time">1 day ago</td>
-                                <td><img class="bookimage" src="https://img.search.brave.com/I2PETW7BJp3VYsJXAOs8NbBKSWbGMd4TeNVi5blSHy4/fit/318/225/ce/1/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5V/X3pMR2lTcy0zODhk/QmZSdmM5TXlRSGFM/QiZwaWQ9QXBp">
-                                </td>
-                                <td class="path">
-                                    <a href="#" title="Wings of Fire">Wings of fire <i>by A. P. J. Abdul Kalam</i></a>
-                                </td>
+                            <tbody>
+                                <tr>
+                                    <td class="time">1 day ago</td>
+                                    <td><img class="bookimage" src="https://img.search.brave.com/I2PETW7BJp3VYsJXAOs8NbBKSWbGMd4TeNVi5blSHy4/fit/318/225/ce/1/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5V/X3pMR2lTcy0zODhk/QmZSdmM5TXlRSGFM/QiZwaWQ9QXBp">
+                                    </td>
+                                    <td class="path">
+                                        <a href="https://en.wikipedia.org/wiki/Wings_of_Fire_(autobiography)" title="Wings of Fire">Wings of fire</a>
+                                    </td>
 
-                            </tr>
-                            <tr>
-                                <td class="time">12 days ago</td>
-                                <td><img class="bookimage" src="https://img.search.brave.com/RBeE2rWoWZ523fQe1I_2ptp5fHdOGgkm-hPIEuk1oLg/fit/314/225/ce/1/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5F/LVZiMTBHMkd0N09X/YUxpbFZpYTdnSGFM/SyZwaWQ9QXBp"></td>
-                                <td class="path">
+                                </tr>
+                                <tr>
+                                    <td class="time">12 days ago</td>
+                                    <td><img class="bookimage" src="https://img.search.brave.com/RBeE2rWoWZ523fQe1I_2ptp5fHdOGgkm-hPIEuk1oLg/fit/314/225/ce/1/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5F/LVZiMTBHMkd0N09X/YUxpbFZpYTdnSGFM/SyZwaWQ9QXBp"></td>
+                                    <td class="path">
 
-                                    <a href="#" class="datalink"> War and Peace<i>  by  Leo Tolstoy</i></a>
-
-
-
-                                </td>
-
-
-
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="time">15 days ago</td>
-                                <td><img class="bookimage" src="https://img.search.brave.com/eFPsb8euudUF7lBHSGbwt8k0_unVr1HZ4qtNNUlKuAM/fit/358/225/ce/1/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5C/Y3VUQ0RDMnV0THdj/dGVQX0dOeVhnSGFK/eSZwaWQ9QXBp"></td>
-                                <td class="path">
+                                        <a href="https://en.wikipedia.org/wiki/War_and_Peace" class="datalink"> War and Peace</a>
+                                    </td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="time">15 days ago</td>
+                                    <td><img class="bookimage" src="https://img.search.brave.com/eFPsb8euudUF7lBHSGbwt8k0_unVr1HZ4qtNNUlKuAM/fit/358/225/ce/1/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5C/Y3VUQ0RDMnV0THdj/dGVQX0dOeVhnSGFK/eSZwaWQ9QXBp"></td>
+                                    <td class="path">
 
 
-                                    <a href="#" title="INtroduction to Algorithms">Introduction to Algorithms <i>by Thomas Corman</i></a>
-                                </td>
+                                        <a href="https://en.wikipedia.org/wiki/Introduction_to_Algorithms" title="INtroduction to Algorithms">Introduction to Algorithms</a>
+                                    </td>
 
 
-                                </td>
-                            </tr>
-                        </tbody>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>&nbsp;
+                    </div>
+                    <div>
+                        <p>Your Reading Curve</p>
+                        <img src="https://img.search.brave.com/yUnTgsF3VJGUvDcN-2wfYs5wHR9rDtzQvlXnl-xcf4c/fit/852/225/ce/1/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5i/M3hTaTExeVBMbjh0/enQ1bzVER0tBQUFB/QSZwaWQ9QXBp" alt="Reading Time Curve">
+
+                    </div>
                 </div>
-                </table>
+
+                <div class="right-side">
+                    <div class="topic-text">
+
+
+                    </div>
+                </div>
 
             </div>
-
-            <div class="right-side">
-                <div class="topic-text">
-
-
-                </div>
-            </div>
-
         </div>
-    </div>
     </div>
 
     <div class="fbody">
