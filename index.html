@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bookshelf</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Crete+Round&family=Francois+One&family=Spectral:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@200&display=swap" rel="stylesheet">
+
+    <style>
+        img:hover {
+            opacity: 0.7;
+        }
+        
+        div.background {
+            background: url(dtemp.jpg) repeat;
+            border: 2px solid black;
+        }
+        
+        div.transbox {
+            margin: 15px;
+            background-color: #ffffff;
+            border: 1px solid black;
+            opacity: 0.6;
+            padding: -10px;
+        }
+        
+        div.transbox p {
+            margin: 5%;
+            font-weight: bold;
+            color: #000000;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        /* Create four equal columns that floats next to each other */
+        
+        .column {
+            float: left;
+            width: 22%;
+            padding: 10px;
+            height: 250px;
+            margin: 10px;
+            border-radius: 5px;
+            /* Should be removed. Only for demonstration */
+        }
+        /* Clear floats after the columns */
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+
+</head>
+
+<body onload="startTime()" onload="alert(message)">
+    <!-- /* <-------------------------- nav bar ---------------------------------->
+
+    <header>
+        <nav>
+            <div class="logo" style="font-family: 'Cinzel', serif;">The Bookshelf</div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="LogIn.html">Login</a></li>
+                    <li><a href="CreateAccount.html">Signup</a></li>
+                    <!-- <li><a href="account.php">Account</a></li> -->
+                    <a href="profile.html"><i class="fas fa-user-circle" style='font-size:25px;color:rgb(255, 251, 251)'></i></a>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content">
+
+        <center>
+            <table border="0" align="center" style="background-color:rgb(255, 255, 255);">
+                <tr spacing="22%">
+                    <th width="15%" spacing="22%">
+                        <font face="arial" size="4">
+                            <b>Science And Technology</b>
+                        </font>
+                    </th>
+                    <th width="15%" spacing="22%">
+                        <font face="arial" size="4">
+                            <b>Fictional Books</b>
+                        </font>
+                    </th>
+                    <th width="15%" spacing="22%">
+                        <font face="arial" size="4">
+                            <b>Mythological Books</b>
+                        </font>
+                    </th>
+                    <th width="15%" spacing="22%">
+                        <font face="arial" size="4">
+                            <b>Educational Books</b>
+                        </font>
+                    </th>
+                    <th width="15%" spacing="22%">
+                        <font face="arial" size="4">
+                            <b>Short Stories</b>
+                        </font>
+                    </th>
+                </tr>
+                <tr>
+                    &nbsp;&nbsp;&nbsp;
+                    <td width="10%" spacing="22%" cellpadding="pixels" cellspacing="pixels" align="center">
+                        <a href="science.html">
+                            <img src="https://imgr.search.brave.com/XRe4i9qDBLTrFWijTR62JP_a7aRQOM91pyUaLks9Tk4/fit/844/225/ce/1/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5o/RWxhZDN0Z1NuODFC/X3BGUERvaVJ3SGFF/SyZwaWQ9QXBp" alt="Science And Technology image" width="250px" height="250px">
+                        </a>
+                    </td>
+                    &nbsp;&nbsp;&nbsp;
+                    <td width="10%" spacing="22%" cellpadding="pixels" cellspacing="pixels" align="center">
+                        <a href="fictional.html">
+                            <img src="https://imgr.search.brave.com/TuWiFJ-JhxbqaAYBHYXYE2AJCBzbk70o3Z-jauVFPSw/fit/975/1200/ce/1/aHR0cHM6Ly9zLmhk/bnV4LmNvbS9waG90/b3MvNDIvNzQvMjMv/OTE1OTg3Ny82Lzk3/NXgwLmpwZw" alt="Fictional image" width="250px" height="250px">
+                        </a>
+                    </td>
+                    &nbsp;&nbsp;&nbsp;
+                    <td width="10%" spacing="22%" cellpadding="pixels" cellspacing="pixels" align="center">
+                        <a href="mythology.html">
+                            <img src="https://imgr.search.brave.com/liZgCggfVXL4bo8Xkg7r7J6Rct6fTqOsmy5_y3Pm0zU/fit/1200/1080/ce/1/aHR0cHM6Ly93YWxs/dXAubmV0L3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDE5LzA5LzYz/MjM4NC1hZ2Utb2Yt/bXl0aG9sb2d5LXN0/cmF0ZWd5LWZhbnRh/c3ktcnRzLWJvYXJk/LWZpZ2h0aW5nLTFh/b20tZ29kLXdhcnJp/b3IuanBn"
+                                alt="Mythology image" width="250px" height="250px">
+                        </a>
+                    </td>
+                    &nbsp;&nbsp;&nbsp;
+                    <td width="10%" spacing="22%" cellpadding="pixels" cellspacing="pixels" align="center">
+                        <a href="educational.html">
+                            <img src="https://imgr.search.brave.com/hYHIA3T_L7EI1DLG9pamaw76UL2zfdmLnaP9WX5sUc4/fit/713/225/ce/1/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5T/VWNwd1lLdlJmZ1dh/UTRKUGxxaC13SGFF/NyZwaWQ9QXBp" alt="Educational image" width="250px" height="250px">
+                        </a>
+                    </td>
+                    &nbsp;&nbsp;&nbsp;
+                    <td width="10%" spacing="22%" cellpadding="pixels" cellspacing="pixels" align="center">
+                        <a href="stories.html">
+                            <img src="https://imgr.search.brave.com/5Dv5aZ_5xSM1j7PYoeE06rNeod-Wg8dAN7lk7tPEBX4/fit/881/225/ce/1/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC4w/NVdrNktCdEVGekJm/Y1ExMVNqb0Z3SGFE/XyZwaWQ9QXBp" alt="Short Stories image" width="250px" height="250px">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </div>
+
+    <!--Clock Script-->
+    <script>
+        function startTime() {
+            const today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+            setTimeout(startTime, 1000);
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i
+            }; // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+
+    <!-- /* <-------------------------- The Bookeshelf ---------------------------------->
+    <div class="conta">
+        <div class="serch-section">
+            <form class="search-form" action="index.html" method="">
+                <input type="text" class="search-form-text" placeholder="Search">
+            </form>
+        </div>
+        <div>
+            <span class="text1" style="font-family: 'Cinzel', serif;">The Bookshelf</span><br>
+        </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <script>
+        $(window).scrolldown(function() {
+            if ($(window).scrollTop()) {
+                $("nav").addClass("black");
+            } else {
+                $("nav").removeClass("black")
+            }
+        })
+    </script>
+    <!-- /* <-------------------------- foooter ---------------------------------->
+
+    <div class="fbody">
+        <footer class="footer">
+            <div class="fcontainer">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>Team</h4>
+                        <ul>
+                            <li><a href="#">Manisha Koranga BTCSE033</a></li>
+                            <li><a href="#">Niraj Matere BTCSE138</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="footer-col">
+                        <h4>Quick Find</h4>
+                        <ul>
+                            <li><a href="science.html">Science and Technology</a></li>
+                            <li><a href="fictional.html">Fictional Books</a></li>
+                            <li><a href="mythology.html">Mythological Books</a></li>
+                            <li><a href="educational.html">Educational Books</a></li>
+                            <li><a href="stories.html">Short Stories</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="footer-col">
+                        <h4>Follow us</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <div class="footer-col">
+                            <div id="txt" style="text-align: center; font-size: 18px; color: #bbbb;margin-top: 10px;margin-left: -14px;">
+                            </div>
+                        </div>
+
+                        <div class="footer-col">
+                            <div class="rig">
+                                You Read.You Learn.You Grow.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </footer>
+    </div>
+</body>
+
+</html>
