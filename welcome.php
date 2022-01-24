@@ -1,0 +1,431 @@
+<?php
+// Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+?>
+
+
+   
+ 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bookshelf</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Crete+Round&family=Francois+One&family=Spectral:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@200&display=swap" rel="stylesheet">
+
+    <style>
+        img:hover {
+            opacity: 0.7;
+        }
+        
+        div.background {
+            background: url(dtemp.jpg) repeat;
+            border: 2px solid black;
+        }
+        
+        div.transbox {
+            margin: 15px;
+            background-color: #ffffff;
+            border: 1px solid black;
+            opacity: 0.6;
+            padding: -10px;
+        }
+        
+        div.transbox p {
+            margin: 5%;
+            font-weight: bold;
+            color: #000000;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        /* Create four equal columns that floats next to each other */
+        
+        .column {
+            float: left;
+            width: 22%;
+            padding: 10px;
+            height: 250px;
+            margin: 10px;
+            border-radius: 5px;
+            /* Should be removed. Only for demonstration */
+        }
+        /* Clear floats after the columns */
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .button {
+            /* background-color: #4CAF50; */
+            /* Green */
+            font-family: "Poppins", sans-serif;
+            border: none;
+            color: rgb(221, 58, 58);
+            padding: 13px 15px;
+            text-align: center;
+            text-decoration: #555555;
+            display: table-footer-group;
+            font-size: 22px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        
+        .button1 {
+            background-color: rgb(202, 178, 178);
+            color: black;
+            border: 1px solid rgb(82, 77, 77);
+        }
+        
+        .button1:hover {
+            background-color: rgb(49, 6, 46);
+            color: white;
+            border-end-end-radius: 20%;
+            border-start-start-radius: 20%;
+        }
+        
+        .button2 {
+            background-color: rgb(202, 178, 178);
+            color: black;
+            border: 1px solid rgb(82, 77, 77);
+        }
+        
+        .button2:hover {
+            background-color: rgb(49, 6, 46);
+            color: white;
+            border-end-end-radius: 20%;
+            border-start-start-radius: 20%;
+        }
+        
+        .button3 {
+            background-color: rgb(202, 178, 178);
+            color: black;
+            border: 1px solid rgb(82, 77, 77);
+        }
+        
+        .button3:hover {
+            background-color: rgb(49, 6, 46);
+            color: white;
+            /* border-radius: 30%; */
+            border-end-end-radius: 20%;
+            border-start-start-radius: 20%;
+        }
+        
+        .button4 {
+            background-color: rgb(36, 15, 15);
+            color: rgb(245, 244, 244);
+            /* border-radius: 15%; */
+            border: 1px solid rgb(255, 255, 255);
+            left: 40%;
+            /* border: 2px solid #ebf1f1; */
+            position: relative;
+        }
+        
+        .button4:hover {
+            background-color: rgb(250, 250, 250);
+            color: rgb(0, 0, 0);
+            border: 1px solid rgb(0, 0, 0);
+            box-shadow: 0 0 10px 4px #34495e;
+        }
+    </style>
+
+</head>
+
+<body onload="startTime()" onload="alert(message)">
+    <!-- /* <-------------------------- nav bar ---------------------------------->
+
+    <header>
+        <nav>
+            <div class="logo" style="font-family: 'Cinzel', serif;">The Bookshelf</div>
+            <div class="menu">
+                <ul>
+                <li><a href="index.html">Home</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="logout.php">Log Out</a></li>
+                   
+
+                    <li><i class="fa fa-bell" style="font-size:25px"></i></li>
+                    <a href="profile.html"><i class="fas fa-user-circle" style='font-size:25px;color:rgb(255, 251, 251)'></i></a>
+                    <li><h2class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h2></li>
+                  
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="gradient">
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <span class="text3" style="font-family:FreightTextPro, Georgia, serif;">Explore & read millions of <br>&nbsp;&nbsp; books online for free <br></span>
+            <a href="library.html"><button class="button button4">Browse our collection</button></a>
+        </div>
+        <table>
+            <tr style="position: relative;left: 5%;">
+                <td width=20%>
+                    <div class="container">
+                        <div class="card">
+                            <div class="slide slide1">
+                                <div class="content">
+                                    <a href="science.html">
+                                        <div class="icon">
+                                            <i class="fa fa-rocket" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide slide2">
+                                <div class="content">
+                                    <h3>
+                                        Science & Technology
+                                    </h3>
+                                    <p>Explore the world of science</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td width=20%>
+                    <div class="container">
+                        <div class="card">
+                            <div class="slide slide1">
+                                <div class="content">
+                                    <a href="fictional.html">
+                                        <div class="icon">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide slide2">
+                                <div class="content">
+                                    <h3>
+                                        Fictional Stories
+                                    </h3>
+                                    <p>Lost yourself in fiction</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td width=20%>
+                    <div class="container">
+                        <div class="card">
+                            <div class="slide slide1">
+                                <div class="content">
+                                    <a href="mythology.html">
+                                        <div class="icon">
+                                            <i class="fa fa-atom" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide slide2">
+                                <div class="content">
+                                    <h3>
+                                        Mythological Stories
+                                    </h3>
+                                    <p>Bulid yourself with mythology</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr style="position: relative;left: 23%;">
+                <td width=20%>
+                    <div class="container">
+                        <div class="card">
+                            <div class="slide slide1">
+                                <div class="content">
+                                    <a href="educational.html">
+                                        <div class="icon">
+                                            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide slide2">
+                                <div class="content">
+                                    <h3>
+                                        Educational Books
+                                    </h3>
+                                    <p>Explore the world of education</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td width=20%>
+                    <div class="container">
+                        <div class="card">
+                            <div class="slide slide1">
+                                <div class="content">
+                                    <a href="fictional.html">
+                                        <div class="icon">
+                                            <i class="fa fa-theater-masks" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide slide2">
+                                <div class="content">
+                                    <h3>
+                                        Short Stories
+                                    </h3>
+                                    <p>Short story,Big learning</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+    </div>
+
+    <!--Clock Script-->
+    <script>
+        function startTime() {
+            const today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+            setTimeout(startTime, 1000);
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i
+            }; // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+
+    <!-- /* <-------------------------- The Bookeshelf ---------------------------------->
+
+
+    <div class="conta">
+        <div>
+            <span class="text1" style="font-family: 'Cinzel', serif;">The Bookshelf</span><br>
+        </div>
+        <div class="serch-section">
+            <form class="search-form" action="index.html" method="">
+                <input type="text" class="search-form-text" placeholder="Search">
+            </form>
+        </div>
+
+        <div>
+            <table>
+                <tr spacing="42%" cellpadding="pixels" cellspacing="pixels">
+                    <td width="30%">
+                        <a href="library.html"><button class="button button1">Library</button>
+                        </a>
+                    </td>
+                    <td width="30%">
+                        <a href="news.html"><button class="button button2">Newspapers</button></a>
+                    </td>
+                    <td width="37%">
+                        <a href="magazine.html"><button class="button button3">Magazines</button></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <script>
+        $(window).scrolldown(function() {
+            if ($(window).scrollTop()) {
+                $("nav").addClass("black");
+            } else {
+                $("nav").removeClass("black")
+            }
+        })
+    </script>
+    <!-- /* <-------------------------- foooter ---------------------------------->
+
+    <div class="fbody">
+        <footer class="footer">
+            <div class="fcontainer">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>Team</h4>
+                        <ul>
+                            <li><a href="#">Manisha Koranga BTCSE033</a></li>
+                            <li><a href="#">Niraj Matere BTCSE138</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="footer-col">
+                        <h4>Quick Find</h4>
+                        <ul>
+                            <li><a href="science.html">Science and Technology</a></li>
+                            <li><a href="fictional.html">Fictional Books</a></li>
+                            <li><a href="mythology.html">Mythological Books</a></li>
+                            <li><a href="educational.html">Educational Books</a></li>
+                            <li><a href="stories.html">Short Stories</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="footer-col">
+                        <h4>Follow us</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <div class="footer-col">
+                            <div id="txt" style="text-align: center; font-size: 18px; color: #bbbb;margin-top: 10px;margin-left: -14px;">
+                            </div>
+                        </div>
+
+                        <div class="footer-col">
+                            <div class="rig">
+                                You Read.You Learn.You Grow.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </footer>
+    </div>
+</body>
+
+</html>
