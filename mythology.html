@@ -9,59 +9,83 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <style>
+        .button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 16px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        
+        .button1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+        
+        .button1:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .button2 {
+            background-color: white;
+            color: black;
+            border: 2px solid #f44336;
+        }
+        
+        .button2:hover {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .button3 {
+            background-color: white;
+            color: black;
+            border: 2px solid #555555;
+        }
+        
+        .button3:hover {
+            background-color: #555555;
+            color: white;
+        }
+    </style>
+
+    <!--Clock Script-->
+    <script>
+        function startTime() {
+            const today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+            setTimeout(startTime, 1000);
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i
+            }; // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+
 </head>
 
-<style>
-    .button {
-        background-color: #4CAF50;
-        /* Green */
-        border: none;
-        color: white;
-        padding: 16px 16px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 12px;
-        margin: 4px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-    }
-    
-    .button1 {
-        background-color: white;
-        color: black;
-        border: 2px solid #4CAF50;
-    }
-    
-    .button1:hover {
-        background-color: #4CAF50;
-        color: white;
-    }
-    
-    .button2 {
-        background-color: white;
-        color: black;
-        border: 2px solid #f44336;
-    }
-    
-    .button2:hover {
-        background-color: #f44336;
-        color: white;
-    }
-    
-    .button3 {
-        background-color: white;
-        color: black;
-        border: 2px solid #555555;
-    }
-    
-    .button3:hover {
-        background-color: #555555;
-        color: white;
-    }
-</style>
 
-<body>
+<body onload="startTime()" onload="alert(message)">
     <div>
         <nav>
             <div class="logo" style="font-family: 'Cinzel', serif; text-transform: uppercase;">The Bookshelf</div>
@@ -72,8 +96,8 @@
                     <li><a href="contactus.html">Contact Us</a></li>
                     <li><a href="login.php">Login</a></li>
                     <li><a href="register.php">Signup</a></li>
-                    <li><i class="fa fa-bell" style="font-size:25px"></i></li>
-                    <a href="profile.html"><i class="fas fa-user-circle" style='font-size:25px;color:rgb(255, 251, 251)'></i></a>
+
+                    <a href="profile.php"><i class="fas fa-user-circle" style='font-size:25px;color:rgb(255, 251, 251)'></i></a>
                 </ul>
             </div>
         </nav>
@@ -101,9 +125,9 @@
                     <p>The Mahābhārata (/məhɑːˈbɑːrətə/; Sanskrit: महाभारतम्, Mahābhāratam, pronounced [mɐɦaːˈbʱaːrɐt̪ɐm]) is one of the two major Sanskrit epics of ancient India, the other being the Rāmāyaṇa. It narrates the struggle between two groups
                         of cousins in the ... <a href="https://en.wikipedia.org/wiki/Mahabharata">Wikipedia</a></p>
 
-                    <button class="button button1">Read Online</button>
-                    <button class="button button2">Buy Now</button>
-                    <button class="button button3">Add to Cart</button>
+                    <button class="button button1" onclick="window.open('https://en.wikipedia.org/wiki/Mahabharata')">Read Online</button>
+                    <button class="button button2" onclick="alert('BOOK ADDED TO CART!')">Buy Now</button>
+                    <button class="button button3" onclick="alert('BOOK ADDED TO CART!')">Add to Cart</button>
                 </div>
 
             </div>
@@ -125,9 +149,9 @@
 
                     <p>Rāmāyana (/rɑːˈmɑːjənə/; Sanskrit: रामायणम्, IAST: Rāmāyaṇam pronounced [raːˈmaːjɐɳɐm]) is one of the two major Sanskrit epics of ancient India and important text of Hinduism, the other being the Mahābhārata. The epic, traditionally
                         ascribed to the Maharishi ... <a href="https://en.wikipedia.org/wiki/Ramayana">Wikipedia</a></p>
-                    <button class="button button1">Read Online</button>
-                    <button class="button button2">Buy Now</button>
-                    <button class="button button3">Add to Cart</button>
+                    <button class="button button1" onclick="window.open('https://en.wikipedia.org/wiki/Ramayana')">Read Online</button>
+                    <button class="button button2" onclick="alert('BOOK ADDED TO CART!')">Buy Now</button>
+                    <button class="button button3" onclick="alert('BOOK ADDED TO CART!')">Add to Cart</button>
                 </div>
 
             </div>
@@ -151,9 +175,9 @@
                     </p>
                     <p>Norse Mythology is a 2017 book by Neil Gaiman. The book is a retelling of several stories from Norse mythology, including the theft of Thor's hammer and the binding of Fenrir. In the introduction, Gaiman describes where his fondness
                         for the source material comes from.<a href="https://en.wikipedia.org/wiki/Norse_Mythology_(book)">Wikipedia</a></p>
-                    <button class="button button1">Read Online</button>
-                    <button class="button button2">Buy Now</button>
-                    <button class="button button3">Add to Cart</button>
+                    <button class="button button1" onclick="window.open('https://en.wikipedia.org/wiki/Norse_Mythology_(book)')">Read Online</button>
+                    <button class="button button2" onclick="alert('BOOK ADDED TO CART!')">Buy Now</button>
+                    <button class="button button3" onclick="alert('BOOK ADDED TO CART!')">Add to Cart</button>
                 </div>
 
             </div>
@@ -175,9 +199,9 @@
 
                     <p>The Book of Viking Myths retells the stories of the Viking people, with myths of their gods and goddesses, monsters, and great heroes. From tales of the beautiful and powerful Freyja, to the gold-toothed Heimdallr, to the wolf Fenrir,
                         Peter Archer explores all the figures and tales that make up Norse mythology.<a href="https://en.wikipedia.org/wiki/Norse_mythology">Wikipedia</a></p>
-                    <button class="button button1">Read Online</button>
-                    <button class="button button2">Buy Now</button>
-                    <button class="button button3">Add to Cart</button>
+                    <button class="button button1" onclick="window.open('https://en.wikipedia.org/wiki/Norse_mythology')">Read Online</button>
+                    <button class="button button2" onclick="alert('BOOK ADDED TO CART!')">Buy Now</button>
+                    <button class="button button3" onclick="alert('BOOK ADDED TO CART!')">Add to Cart</button>
                 </div>
 
             </div>

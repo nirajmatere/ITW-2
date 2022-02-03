@@ -154,9 +154,31 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         }
     </style>
 
+<!--Clock Script-->
+<script>
+    function startTime() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+        setTimeout(startTime, 1000);
+    }
+
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i
+        }; // add zero in front of numbers < 10
+        return i;
+    }
+</script>
+
 </head>
 
-<body onload="startTime()" onload="alert(message)">
+
+    <body onload="startTime()" onload="alert(message)">
     <!-- /* <-------------------------- nav bar ---------------------------------->
 
     <header>
@@ -169,9 +191,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     <li><a href="contactus.html">Contact Us</a></li>
                     <li><a href="logout.php">Log Out</a></li>
                    
-
-                    <li><i class="fa fa-bell" style="font-size:25px"></i></li>
-                    <a href="profile.html"><i class="fas fa-user-circle" style='font-size:25px;color:rgb(255, 251, 251)'></i></a>
+                    <a href="profile.php"><i class="fas fa-user-circle" style='font-size:25px;color:rgb(255, 251, 251)'></i></a>
                     <li><h2class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h2></li>
                   
                 </ul>
@@ -312,26 +332,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
     </div>
 
-    <!--Clock Script-->
-    <script>
-        function startTime() {
-            const today = new Date();
-            let h = today.getHours();
-            let m = today.getMinutes();
-            let s = today.getSeconds();
-            m = checkTime(m);
-            s = checkTime(s);
-            document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
-            setTimeout(startTime, 1000);
-        }
-
-        function checkTime(i) {
-            if (i < 10) {
-                i = "0" + i
-            }; // add zero in front of numbers < 10
-            return i;
-        }
-    </script>
 
     <!-- /* <-------------------------- The Bookeshelf ---------------------------------->
 

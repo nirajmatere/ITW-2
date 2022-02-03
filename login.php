@@ -112,10 +112,31 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
    
   }
   </style>
+<!--Clock Script-->
+<script>
+    function startTime() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+        setTimeout(startTime, 1000);
+    }
+
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i
+        }; // add zero in front of numbers < 10
+        return i;
+    }
+</script>
+
 </head>
 
 
-<body>
+    <body onload="startTime()" onload="alert(message)">
     <div>
         <nav>
             <div class="logo" style="font-family: 'Cinzel', serif; text-transform: uppercase;">The Bookshelf</div>
@@ -126,8 +147,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <li><a href="contactus.html">Contact Us</a></li>
                     <li><a href="login.php">Login</a></li>
                     <li><a href="register.php">Signup</a></li>
-                    <li><i class="fa fa-bell" style="font-size:25px"></i></li>
-                    <a href="profile.html"><i class="fas fa-user-circle" style='font-size:25px;color:rgb(255, 251, 251)'></i></a>
+                  
+                    <a href="profile.php"><i class="fas fa-user-circle" style='font-size:25px;color:rgb(255, 251, 251)'></i></a>
 
                 </ul>
             </div>

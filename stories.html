@@ -9,59 +9,82 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 16px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        
+        .button1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+        
+        .button1:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .button2 {
+            background-color: white;
+            color: black;
+            border: 2px solid #f44336;
+        }
+        
+        .button2:hover {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .button3 {
+            background-color: white;
+            color: black;
+            border: 2px solid #555555;
+        }
+        
+        .button3:hover {
+            background-color: #555555;
+            color: white;
+        }
+    </style>
+
+    <!--Clock Script-->
+    <script>
+        function startTime() {
+            const today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+            setTimeout(startTime, 1000);
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i
+            }; // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+
 </head>
 
-<style>
-    .button {
-        background-color: #4CAF50;
-        /* Green */
-        border: none;
-        color: white;
-        padding: 16px 16px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 12px;
-        margin: 4px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-    }
-    
-    .button1 {
-        background-color: white;
-        color: black;
-        border: 2px solid #4CAF50;
-    }
-    
-    .button1:hover {
-        background-color: #4CAF50;
-        color: white;
-    }
-    
-    .button2 {
-        background-color: white;
-        color: black;
-        border: 2px solid #f44336;
-    }
-    
-    .button2:hover {
-        background-color: #f44336;
-        color: white;
-    }
-    
-    .button3 {
-        background-color: white;
-        color: black;
-        border: 2px solid #555555;
-    }
-    
-    .button3:hover {
-        background-color: #555555;
-        color: white;
-    }
-</style>
 
-<body>
+<body onload="startTime()" onload="alert(message)">
     <div>
         <nav>
             <div class="logo" style="font-family: 'Cinzel', serif; text-transform: uppercase;">The Bookshelf</div>
@@ -72,8 +95,8 @@
                     <li><a href="contactus.html">Contact Us</a></li>
                     <li><a href="login.php">Login</a></li>
                     <li><a href="register.php">Signup</a></li>
-                    <li><i class="fa fa-bell" style="font-size:25px"></i></li>
-                    <a href="profile.html"><i class="fas fa-user-circle" style='font-size:25px;color:rgb(255, 251, 251)'></i></a>
+
+                    <a href="profile.php"><i class="fas fa-user-circle" style='font-size:25px;color:rgb(255, 251, 251)'></i></a>
                 </ul>
             </div>
         </nav>
@@ -101,9 +124,9 @@
                     <p>The Panchatantra (IAST: Pañcatantra, ISO: Pañcatantra, Sanskrit: पञ्चतन्त्र, "Five Treatises") is an ancient Indian collection of interrelated animal fables in Sanskrit verse and prose, arranged within a frame story. The surviving
                         work is dated to about 200 BCE, but the ... <a href="https://en.wikipedia.org/wiki/Panchatantra">Wikipedia</a></p>
 
-                    <button class="button button1">Read Online</button>
-                    <button class="button button2">Buy Now</button>
-                    <button class="button button3">Add to Cart</button>
+                    <button class="button button1" onclick="window.open('https://en.wikipedia.org/wiki/Panchatantra')">Read Online</button>
+                    <button class="button button2" onclick="alert('BOOK ADDED TO CART!')">Buy Now</button>
+                    <button class="button button3" onclick="alert('BOOK ADDED TO CART!')">Add to Cart</button>
                 </div>
 
             </div>
@@ -125,9 +148,9 @@
 
                     <p>Tenth of December is a collection of short stories by American author George Saunders. It includes stories published in various magazines between 1995 and 2012. The book was published on January 8, 2013, by Random House. One of the
                         stories, "Home," was a 2011 Bram Stoker Award finalist. <a href="https://en.wikipedia.org/wiki/Tenth_of_December:_Stories">Wikipedia</a></p>
-                    <button class="button button1">Read Online</button>
-                    <button class="button button2">Buy Now</button>
-                    <button class="button button3">Add to Cart</button>
+                    <button class="button button1" onclick="window.open('https://en.wikipedia.org/wiki/Tenth_of_December:_Stories')">Read Online</button>
+                    <button class="button button2" onclick="alert('BOOK ADDED TO CART!')">Buy Now</button>
+                    <button class="button button3" onclick="alert('BOOK ADDED TO CART!')">Add to Cart</button>
                 </div>
 
             </div>
@@ -151,9 +174,9 @@
                     </p>
                     <p>Nine Stories (1953) is a collection of short stories by American fiction writer J. D. Salinger published in April 1953. It includes two of his most famous short stories, "A Perfect Day for Bananafish" and "For Esmé – with Love and
                         Squalor". (Nine Stories is the U.S. title; the book is published ... <a href="https://en.wikipedia.org/wiki/Nine_Stories_(Salinger)">Wikipedia</a></p>
-                    <button class="button button1">Read Online</button>
-                    <button class="button button2">Buy Now</button>
-                    <button class="button button3">Add to Cart</button>
+                    <button class="button button1" onclick="window.open('https://en.wikipedia.org/wiki/Nine_Stories_(Salinger)')">Read Online</button>
+                    <button class="button button2" onclick="alert('BOOK ADDED TO CART!')">Buy Now</button>
+                    <button class="button button3" onclick="alert('BOOK ADDED TO CART!')">Add to Cart</button>
                 </div>
 
             </div>
@@ -175,9 +198,9 @@
 
                     <p>The search for the meaning of Being is man's eternal quest and the subject of his greatest creations. Shivaji Sawant's Mrityunjaya is an outstanding instance of such a literary masterpiece in which a contemporary Marathi novelist investigates
                         the meaning of the bewildering skein that is life through the personae of the Mahabharata protagonists.<a href="https://en.wikipedia.org/wiki/Shivaji_Sawant">Wikipedia</a></p>
-                    <button class="button button1">Read Online</button>
-                    <button class="button button2">Buy Now</button>
-                    <button class="button button3">Add to Cart</button>
+                    <button class="button button1" onclick="window.open('https://en.wikipedia.org/wiki/Shivaji_Sawant')">Read Online</button>
+                    <button class="button button2" onclick="alert('BOOK ADDED TO CART!')">Buy Now</button>
+                    <button class="button button3" onclick="alert('BOOK ADDED TO CART!')">Add to Cart</button>
                 </div>
 
             </div>

@@ -9,59 +9,83 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <style>
+        .button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 16px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        
+        .button1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+        
+        .button1:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .button2 {
+            background-color: white;
+            color: black;
+            border: 2px solid #f44336;
+        }
+        
+        .button2:hover {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .button3 {
+            background-color: white;
+            color: black;
+            border: 2px solid #555555;
+        }
+        
+        .button3:hover {
+            background-color: #555555;
+            color: white;
+        }
+    </style>
+
+    <!--Clock Script-->
+    <script>
+        function startTime() {
+            const today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+            setTimeout(startTime, 1000);
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i
+            }; // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+
 </head>
 
-<style>
-    .button {
-        background-color: #4CAF50;
-        /* Green */
-        border: none;
-        color: white;
-        padding: 16px 16px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 12px;
-        margin: 4px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-    }
-    
-    .button1 {
-        background-color: white;
-        color: black;
-        border: 2px solid #4CAF50;
-    }
-    
-    .button1:hover {
-        background-color: #4CAF50;
-        color: white;
-    }
-    
-    .button2 {
-        background-color: white;
-        color: black;
-        border: 2px solid #f44336;
-    }
-    
-    .button2:hover {
-        background-color: #f44336;
-        color: white;
-    }
-    
-    .button3 {
-        background-color: white;
-        color: black;
-        border: 2px solid #555555;
-    }
-    
-    .button3:hover {
-        background-color: #555555;
-        color: white;
-    }
-</style>
 
-<body>
+<body onload="startTime()" onload="alert(message)">
     <div>
         <nav>
             <div class="logo" style="font-family: 'Cinzel', serif; text-transform: uppercase;">The Bookshelf</div>
@@ -72,8 +96,8 @@
                     <li><a href="contactus.html">Contact Us</a></li>
                     <li><a href="login.php">Login</a></li>
                     <li><a href="register.php">Signup</a></li>
-                    <li><i class="fa fa-bell" style="font-size:25px"></i></li>
-                    <a href="profile.html"><i class="fas fa-user-circle" style='font-size:25px;color:rgb(255, 251, 251)'></i></a>
+
+                    <a href="profile.php"><i class="fas fa-user-circle" style='font-size:25px;color:rgb(255, 251, 251)'></i></a>
                 </ul>
             </div>
         </nav>
@@ -102,9 +126,9 @@
                     <p>The God Delusion is a 2006 book by British evolutionary biologist, ethologist Richard Dawkins, a professorial fellow at New College, Oxford and, at the time of publication, the Charles Simonyi Chair for the Public Understanding of
                         Science at the University of Oxford.<a href="https://en.wikipedia.org/wiki/The_God_Delusion">Wikipedia</a></p>
 
-                    <button class="button button1">Read Online</button>
-                    <button class="button button2">Buy Now</button>
-                    <button class="button button3">Add to Cart</button>
+                    <button class="button button1" onclick="window.open('https://en.wikipedia.org/wiki/The_God_Delusion')">Read Online</button>
+                    <button class="button button2" onclick="alert('BOOK ADDED TO CART!')">Buy Now</button>
+                    <button class="button button3" onclick="alert('BOOK ADDED TO CART!')">Add to Cart</button>
                 </div>
 
             </div>
@@ -126,9 +150,9 @@
 
                     <p>A Brief History of Time: From the Big Bang to Black Holes is a book on theoretical cosmology by English physicist Stephen Hawking. It was first published in 1988. Hawking wrote the book for readers who had no prior knowledge of physics
                         and people who are interested in learning something new ... <a href="https://en.wikipedia.org/wiki/A_Brief_History_of_Time">Wikipedia</a></p>
-                    <button class="button button1">Read Online</button>
-                    <button class="button button2">Buy Now</button>
-                    <button class="button button3">Add to Cart</button>
+                    <button class="button button1" onclick="window.open('https://en.wikipedia.org/wiki/A_Brief_History_of_Time')">Read Online</button>
+                    <button class="button button2" onclick="alert('BOOK ADDED TO CART!')">Buy Now</button>
+                    <button class="button button3" onclick="alert('BOOK ADDED TO CART!')">Add to Cart</button>
                 </div>
 
             </div>
@@ -152,9 +176,9 @@
                     </p>
                     <p>Silent Spring is an environmental science book by Rachel Carson. The book was published on September 27, 1962, documenting the adverse environmental effects caused by the indiscriminate use of pesticides. Carson accused the chemical
                         industry of spreading disinformation, and public officials ... <a href="https://en.wikipedia.org/wiki/Silent_Spring">Wikipedia</a></p>
-                    <button class="button button1">Read Online</button>
-                    <button class="button button2">Buy Now</button>
-                    <button class="button button3">Add to Cart</button>
+                    <button class="button button1" onclick="window.open('https://en.wikipedia.org/wiki/Silent_Spring')">Read Online</button>
+                    <button class="button button2" onclick="alert('BOOK ADDED TO CART!')">Buy Now</button>
+                    <button class="button button3" onclick="alert('BOOK ADDED TO CART!')">Add to Cart</button>
                 </div>
 
             </div>
@@ -176,9 +200,9 @@
 
                     <p>The Selfish Gene is one of Richard Dawkins older classics but is still as popular today as it was back in 1976. Dawkins uses his idea of the selfish gene as a vehicle to explain the gene-centered nature of evolution. In 2017 it was
                         listed as the most influential science book of time by the Royal Society - and for good reason.<a href="https://en.wikipedia.org/wiki/The_Selfish_Gene">Wikipedia</a></p>
-                    <button class="button button1">Read Online</button>
-                    <button class="button button2">Buy Now</button>
-                    <button class="button button3">Add to Cart</button>
+                    <button class="button button1" onclick="window.open('https://en.wikipedia.org/wiki/The_Selfish_Gene')">Read Online</button>
+                    <button class="button button2" onclick="alert('BOOK ADDED TO CART!')">Buy Now</button>
+                    <button class="button button3" onclick="alert('BOOK ADDED TO CART!')">Add to Cart</button>
                 </div>
 
             </div>
